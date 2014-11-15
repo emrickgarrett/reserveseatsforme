@@ -165,6 +165,26 @@
             showTooltipSnap(width/2-40, 360)
         });
 
+    svg.append("rect")
+        .attr("width", 80)
+        .attr("height", 40)
+        .attr("x", width/2-40)
+        .attr("y", 410)
+        .attr("fill", "white")
+        .attr("stroke", "black")
+        .attr("stroke-width", 2)
+        .on("click", function(){
+            showTooltipLink(width/2-40, 410)
+        });
+    svg.append("text")
+        .attr("x", width/2-34)
+        .attr("y", 410+23)
+        .attr("fill", "black")
+        .text("Link Tool")
+        .on("click", function(){
+            showTooltipLink(width/2-40, 410)
+        });
+
 
 
 
@@ -477,6 +497,12 @@
         tooltipOn = true;
     }
 
+    function showTooltipLink(x, y){
+        $("#tooltip-creator").css({visibility: "visible", opacity: "100", top : y + "px", left: (x-26) + "px"});
+        $("#tooltip-creator").html("Click table, then click chairs to link/unlink.<br/><button class='btn btn-success' onclick='linkButton()'>Finish</button>");
+        tooltipOn = true;
+    }
+
 
     function normalButtonChair(){
         toolSelected = "chair";
@@ -509,6 +535,10 @@
 
         hideToolTip();
 
+    }
+
+    function linkButton(){
+        hideToolTip();
     }
 
 
