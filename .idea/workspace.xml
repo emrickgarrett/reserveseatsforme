@@ -59,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reserve.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="reserve.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/reserve.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1122" max-vertical-offset="2380">
-              <caret line="90" column="22" selection-start-line="90" selection-start-column="22" selection-end-line="90" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.75714284" vertical-offset="2007" max-vertical-offset="2567">
+              <caret line="143" column="17" selection-start-line="143" selection-start-column="17" selection-end-line="143" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -84,17 +84,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="createRestaurant.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="createRestaurant.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/createRestaurant.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.90211135" vertical-offset="7367" max-vertical-offset="8993">
-              <caret line="461" column="30" selection-start-line="461" selection-start-column="30" selection-end-line="461" selection-end-column="30" />
+            <state vertical-scroll-proportion="-24.615385" vertical-offset="7163" max-vertical-offset="8993">
+              <caret line="459" column="42" selection-start-line="459" selection-start-column="42" selection-end-line="459" selection-end-column="42" />
               <folding>
                 <element signature="e#6#89#0#PHP" expanded="true" />
                 <element signature="e#510#536#0#HTML" expanded="true" />
                 <marker date="1416087767350" expanded="true" signature="15823:15844" placeholder="..." />
                 <marker date="1416087767350" expanded="true" signature="15921:15942" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="footer.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dry/footer.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="238">
+              <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -110,14 +120,14 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/dry/footer.php" />
         <option value="$PROJECT_DIR$/dry/header.php" />
         <option value="$PROJECT_DIR$/js/reserve.js" />
         <option value="$PROJECT_DIR$/restaurantSearch.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/css/reserve.css" />
         <option value="$PROJECT_DIR$/reserve.php" />
         <option value="$PROJECT_DIR$/createRestaurant.php" />
+        <option value="$PROJECT_DIR$/dry/footer.php" />
+        <option value="$PROJECT_DIR$/css/reserve.css" />
       </list>
     </option>
   </component>
@@ -329,14 +339,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dry/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="204">
-          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dry/header.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41385767" vertical-offset="0" max-vertical-offset="534">
@@ -360,14 +362,6 @@
           <folding>
             <element signature="e#6#89#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/reserve.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1122" max-vertical-offset="2380">
-          <caret line="90" column="22" selection-start-line="90" selection-start-column="22" selection-end-line="90" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -396,14 +390,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/createRestaurant.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.90211135" vertical-offset="7367" max-vertical-offset="8993">
-          <caret line="461" column="30" selection-start-line="461" selection-start-column="30" selection-end-line="461" selection-end-column="30" />
+        <state vertical-scroll-proportion="-24.615385" vertical-offset="7163" max-vertical-offset="8993">
+          <caret line="459" column="42" selection-start-line="459" selection-start-column="42" selection-end-line="459" selection-end-column="42" />
           <folding>
             <element signature="e#6#89#0#PHP" expanded="true" />
             <element signature="e#510#536#0#HTML" expanded="true" />
             <marker date="1416087767350" expanded="true" signature="15823:15844" placeholder="..." />
             <marker date="1416087767350" expanded="true" signature="15921:15942" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dry/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="238">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/reserve.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.75714284" vertical-offset="2007" max-vertical-offset="2567">
+          <caret line="143" column="17" selection-start-line="143" selection-start-column="17" selection-end-line="143" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>

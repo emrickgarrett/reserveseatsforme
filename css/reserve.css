@@ -13,6 +13,7 @@
 body{
 
     background: #D42B18;
+    padding:0px;
 
 }
 
@@ -132,4 +133,14 @@ body{
     margin-top: 15%;
     height:3em;
     width:7em;
+}
+
+.footer{
+    background: #480F08;
+    color: white;
+    border:none;
+    box-shadow: none;
+    margin-bottom: -1em;
+    font-size:1.2em;
+    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
 }
