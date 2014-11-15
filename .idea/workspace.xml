@@ -50,8 +50,20 @@
       <file leaf-file-name="createRestaurant.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/createRestaurant.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6179775" vertical-offset="3342" max-vertical-offset="4148">
-              <caret line="216" column="25" selection-start-line="216" selection-start-column="25" selection-end-line="216" selection-end-column="25" />
+            <state vertical-scroll-proportion="-2.0561798" vertical-offset="3342" max-vertical-offset="4182">
+              <caret line="132" column="29" selection-start-line="132" selection-start-column="29" selection-end-line="132" selection-end-column="29" />
+              <folding>
+                <element signature="e#6#89#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reserve.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/reserve.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="425">
+              <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
               <folding>
                 <element signature="e#6#89#0#PHP" expanded="true" />
               </folding>
@@ -85,6 +97,7 @@
         <option value="$PROJECT_DIR$/dry/header.php" />
         <option value="$PROJECT_DIR$/css/reserve.css" />
         <option value="$PROJECT_DIR$/js/reserve.js" />
+        <option value="$PROJECT_DIR$/reserve.php" />
         <option value="$PROJECT_DIR$/createRestaurant.php" />
       </list>
     </option>
@@ -305,14 +318,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reserve.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="560">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dry/header.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41385767" vertical-offset="0" max-vertical-offset="534">
@@ -347,10 +352,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/reserve.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="425">
+          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+          <folding>
+            <element signature="e#6#89#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/createRestaurant.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6179775" vertical-offset="3342" max-vertical-offset="4148">
-          <caret line="216" column="25" selection-start-line="216" selection-start-column="25" selection-end-line="216" selection-end-column="25" />
+        <state vertical-scroll-proportion="-2.0561798" vertical-offset="3342" max-vertical-offset="4182">
+          <caret line="132" column="29" selection-start-line="132" selection-start-column="29" selection-end-line="132" selection-end-column="29" />
           <folding>
             <element signature="e#6#89#0#PHP" expanded="true" />
           </folding>

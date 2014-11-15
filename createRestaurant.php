@@ -124,7 +124,7 @@
     var eWidth = 0;
 
     var xOffset = $("#canvas").offset().left;
-    var yOffset = $("#canvas").offset().top;
+    var yOffset = $("#canvas").offset().top + $('body').scrollTop();
 
     var onEntry = function(){
 
@@ -229,6 +229,8 @@
     document.addEventListener('mousemove', function(e){
         mouseX = e.clientX || e.pageX;
         mouseY = e.clientY || e.pageY;
+
+        mouseY += $('body').scrollTop();
     }, false);
 
 </script>
