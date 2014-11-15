@@ -71,3 +71,17 @@ body{
 
 
 }
+
+.tooltip{
+    background: #084827;
+    color: white;
+    padding:.1em;
+    border: solid whitesmoke .3em;
+    height:6em;
+    width:13em;
+
+}
+
+.tooltip-text{
+
+}

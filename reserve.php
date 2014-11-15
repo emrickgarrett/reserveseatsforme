@@ -19,7 +19,7 @@ require("dry/header.php");
                 <hr>
                 <div class="toolbox-loc" id="toolbox-loc"></div>
 
-                <div class="tooltip" id="tooltip" style="visibility:hidden;background:grey;height:8em;width:10em;"></div>
+                <div class="tooltip" id="tooltip" style="visibility:hidden;"></div>
 
             </div>
 
@@ -35,7 +35,7 @@ require("dry/header.php");
 <script type="text/javascript">
 
     //Tooltip stuff
-    var breakLimit = "5em";
+    var breakLimit = 300;
     var toolX = 0;
     var toolY = 0;
     var tooltipOn = false;
@@ -67,7 +67,7 @@ require("dry/header.php");
         .style("stroke-width", 3)
         .on("click", function(){
             var text = "Chairs. Green means available, Red means occupied, Blue means Handicap Accessible.";
-            displayTooltip(width/2-40, 40-46, text);
+            displayTooltip(width/2-40, 40-50, text);
 
         });
 
@@ -82,7 +82,7 @@ require("dry/header.php");
         .style("stroke-width", 3)
         .on("click", function(){
             var text = "Tables that are located within the restaurant.";
-            displayTooltip(width/2-40, 90-16, text);
+            displayTooltip(width/2-40, 90-20, text);
         });
 
     svg.append("rect")
@@ -96,7 +96,7 @@ require("dry/header.php");
         .style("stroke-width", 3)
         .on("click", function(){
             var text = "Walls that are within the restaurant, for decoration only.";
-            displayTooltip(width/2-40, 190-16, text);
+            displayTooltip(width/2-40, 190-20, text);
         });
 
     svg.append("circle")
@@ -108,7 +108,7 @@ require("dry/header.php");
         .style("stroke-width", 3)
         .on("click", function(){
             var text = "Foliage (plants) that are within the restaurant, for decoration only.";
-            displayTooltip(width/2-40,270-46, text);
+            displayTooltip(width/2-40,270-50, text);
         });
 
     svg.append("circle")
@@ -120,15 +120,39 @@ require("dry/header.php");
         .style("stroke-width", 2)
         .on("click", function(){
             var text = "Foliage (plants) that are within the restaurant, for decoration only.";
-            displayTooltip(width/2-40, 270-46, text);
+            displayTooltip(width/2-40, 270-50, text);
         });
 
     function displayTooltip(x, y, text){
         //Display Tooltip on screen here!
-        $("#tooltip").css({visibility: "visible", opacity: "100", top : y + "px", left: x + "px"});
+        $("#tooltip").css({visibility: "visible", opacity: "100", top : y + "px", left: (x-13) + "px"});
         $("#tooltip").html("<p class='tooltip-text'>" + text + "</p>");
+        toolX = x-13;
+        toolY = y;
         tooltipOn = true;
     }
+
+    $('body').mousemove(function(e){
+       if(tooltipOn){
+
+           //Do a test based on the radius for the break....
+           if(Math.sqrt(Math.pow((e.clientX || e.pageX)-toolX, 2) + Math.pow((e.clientY || e.pageX)-toolY, 2)) > breakLimit){
+               $("#tooltip").css({visibility: "hidden", opacity: "0"});
+               toolX = 0;
+               toolY = 0;
+               tooltipOn = false;
+           }
+       }
+    });
+
+    $('#tooltip').click(function(){
+        if(tooltipOn){
+            $("#tooltip").css({visibility: "hidden", opacity: "0"});
+            toolX = 0;
+            toolY = 0;
+            tooltipOn = false;
+        }
+    });
 
 
 </script>
