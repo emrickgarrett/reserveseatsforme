@@ -18,7 +18,7 @@
         wait in another line again.</p>
 
         <p>
-            <a class="btn btn-lg btn-success" href="reserve.php" role="button">Try it today</a>
+            <a class="btn btn-lg btn-success" href="restaurantSearch.php" role="button">Try it today</a>
         </p>
 
     </div>

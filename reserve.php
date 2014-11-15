@@ -298,6 +298,7 @@ require("dry/header.php");
     };
 
 
+
     //Dealing with the Legend window and canvas...
     var width = $("#tools").width(),
         height = $(window).height();
@@ -312,6 +313,9 @@ require("dry/header.php");
     var canvas = d3.select("#canvas-loc").append("svg")
         .attr("width", canvasWidth)
         .attr("height", canvasHeight);
+
+    populateCanvas();
+
 
     svg.append("circle")
         .attr("r", 30)
@@ -379,99 +383,100 @@ require("dry/header.php");
             displayTooltip(width/2-40, 270-50, text);
         });
 
+    function populateCanvas(){
+        canvas.selectAll(".chair")
+            .data(data.chairs)
+            .enter().append("circle")
+            .attr("r", 30)
+            .attr("cx", function(d){return d.x;})
+            .attr("cy", function(d){return d.y;})
+            .attr("class", "chair")
+            .style("fill", function(d){
 
-    canvas.selectAll(".chair")
-        .data(data.chairs)
-        .enter().append("circle")
-        .attr("r", 30)
-        .attr("cx", function(d){return d.x;})
-        .attr("cy", function(d){return d.y;})
-        .attr("class", "chair")
-        .style("fill", function(d){
+                var check = d.status;
 
-            var check = d.status;
+                for(var i = 0; i < data.tables.length;i++){
+                    if(data.tables[i].id == d.table_id){
+                        if(getColor(data.tables[i].status) == "green"){
+                            return getColor(d.status);
+                        }else{
+                            return getColor(data.tables[i].status);
+                        }
 
-            for(var i = 0; i < data.tables.length;i++){
-                if(data.tables[i].id == d.table_id){
-                    if(getColor(data.tables[i].status) == "green"){
-                        return getColor(d.status);
-                    }else{
-                        return getColor(data.tables[i].status);
                     }
-
                 }
-            }
 
-            switch(check){
-                case "handicap":
-                    return "blue";
-                case "taken":
-                    return "brown";
-                default:
-                    return "green";
-            }
+                switch(check){
+                    case "handicap":
+                        return "blue";
+                    case "taken":
+                        return "brown";
+                    default:
+                        return "green";
+                }
 
-        })
-        .style("stroke", "black")
-        .style("stroke-width", 3);
+            })
+            .style("stroke", "black")
+            .style("stroke-width", 3);
 
 
-    canvas.selectAll(".table")
-        .data(data.tables)
-        .enter().append("rect")
-        .attr("width", 80)
-        .attr("height", 80)
-        .attr("y", function(d){ return d.y;})
-        .attr("x", function(d){return d.x;})
-        .attr("class", "table")
-        .style("fill", "white")
-        .style("stroke", "black")
-        .style("stroke-width", 3)
-        .on("click", function(d, i){
+        canvas.selectAll(".table")
+            .data(data.tables)
+            .enter().append("rect")
+            .attr("width", 80)
+            .attr("height", 80)
+            .attr("y", function(d){ return d.y;})
+            .attr("x", function(d){return d.x;})
+            .attr("class", "table")
+            .style("fill", "white")
+            .style("stroke", "black")
+            .style("stroke-width", 3)
+            .on("click", function(d, i){
 
-            if(d.status == "open"){
+                if(d.status == "open"){
 
-                showReservationPrompt(d.id, i);
+                    showReservationPrompt(d.id, i);
 
-            }else{
-                showFailurePrompt(d.id, i);
-            }
+                }else{
+                    showFailurePrompt(d.id, i);
+                }
 
-        });
+            });
 
-    canvas.selectAll(".wall")
-        .data(data.walls)
-        .enter().append("rect")
-        .attr("width", 80)
-        .attr("height", 30)
-        .attr("y", function(d){return d.y;})
-        .attr("x", function(d){return d.x;})
-        .attr("class", "wall")
-        .style("fill", "gray")
-        .style("stroke", "black")
-        .style("stroke-width", 3);
+        canvas.selectAll(".wall")
+            .data(data.walls)
+            .enter().append("rect")
+            .attr("width", 80)
+            .attr("height", 30)
+            .attr("y", function(d){return d.y;})
+            .attr("x", function(d){return d.x;})
+            .attr("class", "wall")
+            .style("fill", "gray")
+            .style("stroke", "black")
+            .style("stroke-width", 3);
 
-    canvas.selectAll(".plant")
-        .data(data.plants)
-        .enter().append("circle")
-        .attr("r", 30)
-        .attr("cx", function(d){return d.x;})
-        .attr("cy", function(d){return d.y;})
-        .attr("class", "plant")
-        .style("fill", "saddlebrown")
-        .style("stroke", "black")
-        .style("stroke-width", 3)
+        canvas.selectAll(".plant")
+            .data(data.plants)
+            .enter().append("circle")
+            .attr("r", 30)
+            .attr("cx", function(d){return d.x;})
+            .attr("cy", function(d){return d.y;})
+            .attr("class", "plant")
+            .style("fill", "saddlebrown")
+            .style("stroke", "black")
+            .style("stroke-width", 3)
 
-    canvas.selectAll(".plantInner")
-        .data(data.plants)
-        .enter().append("circle")
-        .attr("r", 25)
-        .attr("cx", function(d){return d.x;})
-        .attr("cy", function(d){return d.y;})
-        .attr("class", "plantInner")
-        .style("fill", "green")
-        .style("stroke", "black")
-        .style("stroke-width", 2);
+        canvas.selectAll(".plantInner")
+            .data(data.plants)
+            .enter().append("circle")
+            .attr("r", 25)
+            .attr("cx", function(d){return d.x;})
+            .attr("cy", function(d){return d.y;})
+            .attr("class", "plantInner")
+            .style("fill", "green")
+            .style("stroke", "black")
+            .style("stroke-width", 2);
+    }
 
 
     //Canvas Functions
@@ -540,6 +545,23 @@ require("dry/header.php");
 
     function hideFailure(){
         $('#failedReservation').css({visibility: "hidden", opacity: "0"});
+    }
+
+    function confirmReservation(table_id, location){
+        for(var i = 0; i < data.chairs.length; i++){
+            if(data.chairs[i].table_id == table_id){
+                data.chairs[i].status = "taken";
+            }
+        }
+
+        for(var b = 0; b < data.tables.length; b++){
+            if(data.tables[b].id == table_id){
+                data.tables[b].status = "taken";
+            }
+        }
+        cancelReservation();
+        canvas.text("");
+        populateCanvas();
     }
 
 </script>
