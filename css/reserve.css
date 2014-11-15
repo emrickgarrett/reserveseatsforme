@@ -1,0 +1,34 @@
+.navbar-default, .navbar, .navbar-header, .navbar .container-fluid, .navbar-default div.navbar-collapse{
+    background: #480F08;
+    color: black;
+    border:none;
+    box-shadow: none;
+}
+
+.navbar-header a:hover, .navbar-header a:visited, .navbar-header a:active, .navbar-header a:default, .navbar-header a:focus{
+
+    color: white;
+}
+
+body{
+
+    background: #D42B18;
+
+}
+
+.jumbotron h1, .jumbotron p{
+    text-align:center
+
+}
+
+.box{
+
+    background: white;
+    height:15em;
+    border-right: solid #D42B18;
+    border-left: solid #D42B18;
+    border-width:1em;
+    margin-bottom:10em;
+    text-align:center;
+
+}
