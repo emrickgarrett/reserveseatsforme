@@ -69,7 +69,7 @@
         .style("stroke-width", 3)
         .on("click", function(){
 
-            showTooltipSelect(width/2-30, 40);
+            showTooltipSelectChair(width/2-30, 40);
             tooltipOn = true;
 
         });
@@ -97,7 +97,8 @@
         .style("stroke", "black")
         .style("stroke-width", 3)
         .on("click", function(){
-            toolSelected = "wall";
+            showTooltipSelectWall(width/2-30, 190);
+            tooltipOn = true;
         });
 
     svg.append("circle")
@@ -203,9 +204,22 @@
 
                     break;
                 case "wall":
+                case "rotate-wall":
                     rElement = canvas.append("rect")
-                        .attr("width", 80)
-                        .attr("height", 30)
+                        .attr("width", function(){
+                            if(toolSelected=="wall"){
+                                return 80;
+                            }else{
+                                return 30;
+                            }
+                        })
+                        .attr("height", function(){
+                            if(toolSelected == "wall"){
+                                return 30;
+                            }else{
+                                return 80;
+                            }
+                        })
                         .attr("y", function(){return mouseY - yOffset;})
                         .attr("x", function(){return mouseX - xOffset;})
                         .attr("class", "wall")
@@ -213,10 +227,16 @@
                         .style("stroke", "black")
                         .style("stroke-width", 3)
                         .on("click", function(){
-                            placeTool(mouseX, mouseY, "wall");
+                            placeTool(mouseX, mouseY, toolSelected);
                         });
-                    eWidth = 80;
-                    eHeight = 30;
+                    if(toolSelected == "wall"){
+                        eWidth = 80;
+                        eHeight = 30;
+                    }else{
+                        eWidth = 30;
+                        eHeight = 80;
+                    }
+
                     break;
 
                 default:
@@ -307,9 +327,22 @@
                     });
                 break;
             case "wall":
+            case "rotate-wall":
                 canvas.append("rect")
-                    .attr("width", 80)
-                    .attr("height", 30)
+                    .attr("width", function(){
+                        if(type=="wall"){
+                            return 80;
+                        }else{
+                            return 30;
+                        }
+                    })
+                    .attr("height", function(){
+                        if(type=="wall"){
+                            return 30;
+                        }else{
+                            return 80;
+                        }
+                    })
                     .attr("y", function(){return mouseY - yOffset - eHeight/2;})
                     .attr("x", function(){return mouseX - xOffset - eWidth/2;})
                     .attr("class", "wall")
@@ -355,21 +388,37 @@
     }, false);
 
 
-    function showTooltipSelect(x, y){
+    function showTooltipSelectChair(x, y){
         //Display Tooltip on screen here!
         $("#tooltip-creator").css({visibility: "visible", opacity: "100", top : y + "px", left: (x-26) + "px"});
-        $("#tooltip-creator").html("<h5>Handicap Accessible?</h5><button class='btn btn-primary' onclick='handiButton()'>Yes</button><button class='btn' onclick='normalButton()'>No</button>");
+        $("#tooltip-creator").html("<h5>Handicap Accessible?</h5><button class='btn btn-primary' onclick='handiButton()'>Yes</button><button class='btn' onclick='normalButtonChair()'>No</button>");
+        tooltipOn = true;
+    }
+
+    function showTooltipSelectWall(x, y){
+        $("#tooltip-creator").css({visibility: "visible", opacity: "100", top : y + "px", left: (x-26) + "px"});
+        $("#tooltip-creator").html("<h5>Rotate?</h5><button class='btn btn-primary' onclick='rotateWall()'>Yes</button><button class='btn' onclick='normalButtonWall()'>No</button>");
         tooltipOn = true;
     }
 
 
-    function normalButton(){
+    function normalButtonChair(){
         toolSelected = "chair";
+        hideToolTip();
+    }
+
+    function normalButtonWall(){
+        toolSelected = "wall";
         hideToolTip();
     }
 
     function handiButton(){
         toolSelected = "handi-chair";
+        hideToolTip();
+    }
+
+    function rotateWall(){
+        toolSelected = "rotate-wall";
         hideToolTip();
     }
 
