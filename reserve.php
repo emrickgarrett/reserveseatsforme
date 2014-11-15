@@ -46,31 +46,37 @@ require("dry/header.php");
     var data = {
           chairs : [
               {
+                  "table_id" : 1,
                   "x" : 40,
                   "y" : 40,
                   "status" : "open"
               },
               {
+                  "table_id" : 1,
                   "x" : 110,
                   "y" : 40,
                   "status" : "open"
               },
               {
+                  "table_id" : 1,
                   "x" : 180,
                   "y" : 40,
                   "status" : "handicap"
               },
               {
+                  "table_id" : 1,
                   "x" : 40,
                   "y" : 210,
                   "status" : "open"
               },
               {
+                  "table_id" : 1,
                   "x" : 110,
                   "y" : 210,
                   "status" : "open"
               },
               {
+                  "table_id" : 1,
                   "x" : 180,
                   "y" : 210,
                   "status" : "handicap"
@@ -78,31 +84,37 @@ require("dry/header.php");
 
 
               {
+                  "table_id" : 2,
                   "x" : 360,
                   "y" : 40,
                   "status" : "taken"
               },
               {
+                  "table_id" : 2,
                   "x" : 430,
                   "y" : 40,
                   "status" : "taken"
               },
               {
+                  "table_id" : 2,
                   "x" : 500,
                   "y" : 40,
                   "status" : "taken"
               },
               {
+                  "table_id" : 2,
                   "x" : 360,
                   "y" : 210,
                   "status" : "taken"
               },
               {
+                  "table_id" : 2,
                   "x" : 430,
                   "y" : 210,
                   "status" : "taken"
               },
               {
+                  "table_id" : 2,
                   "x" : 500,
                   "y" : 210,
                   "status" : "taken"
@@ -110,31 +122,37 @@ require("dry/header.php");
 
 
               {
+                  "table_id" : 3,
                   "x" : 680,
                   "y" : 40,
                   "status" : "taken"
               },
               {
+                  "table_id" : 3,
                   "x" : 750,
                   "y" : 40,
                   "status" : "taken"
               },
               {
+                  "table_id" : 3,
                   "x" : 820,
                   "y" : 40,
                   "status" : "taken"
               },
               {
+                  "table_id" : 3,
                   "x" : 680,
                   "y" : 210,
                   "status" : "taken"
               },
               {
+                  "table_id" : 3,
                   "x" : 750,
                   "y" : 210,
                   "status" : "taken"
               },
               {
+                  "table_id" : 3,
                   "x" : 820,
                   "y" : 210,
                   "status" : "taken"
@@ -142,31 +160,37 @@ require("dry/header.php");
 
 
               {
+                  "table_id" : 4,
                   "x" : 660,
                   "y" : 330,
                   "status" : "handicap"
               },
               {
+                  "table_id" : 4,
                   "x" : 660,
                   "y" : 400,
                   "status" : "open"
               },
               {
+                  "table_id" : 4,
                   "x" : 660,
                   "y" : 470,
                   "status" : "handicap"
               },
               {
+                  "table_id" : 4,
                   "x" : 840,
                   "y" : 330,
                   "status" : "handicap"
               },
               {
+                  "table_id" : 4,
                   "x" : 840,
                   "y" : 400,
                   "status" : "open"
               },
               {
+                  "table_id" : 4,
                   "x" : 840,
                   "y" : 470,
                   "status" : "handicap"
@@ -176,11 +200,13 @@ require("dry/header.php");
 
           tables : [
               {
+                  "id" : 1,
                   "x" : 20,
                   "y" : 85,
                   status : "open"
               },
               {
+                  "id" : 1,
                   "x" : 120,
                   "y" : 85,
                   status : "open"
@@ -188,33 +214,39 @@ require("dry/header.php");
 
 
               {
+                  "id" : 2,
                   "x" : 340,
                   "y" : 85,
-                  status : "open"
+                  status : "taken"
               },
               {
+                  "id" : 2,
                   "x" : 440,
                   "y" : 85,
-                  status : "open"
+                  status : "taken"
               }, //Table Group 2
 
               {
+                  "id" : 3,
                   "x" : 660,
                   "y" : 85,
-                  status : "open"
+                  status : "taken"
               },
               {
+                  "id" : 3,
                   "x" : 760,
                   "y" : 85,
-                  status : "open"
+                  status : "taken"
               },//Table Group 3
 
               {
+                  "id" : 4,
                   "x" : 710,
                   "y" : 310,
                   status : "open"
               },
               {
+                  "id" : 4,
                   "x" : 710,
                   "y" : 410,
                   status : "open"
@@ -352,7 +384,20 @@ require("dry/header.php");
         .attr("class", "chair")
         .style("fill", function(d){
 
-            switch(d.status){
+            var check = d.status;
+
+            for(var i = 0; i < data.tables.length;i++){
+                if(data.tables[i].id == d.table_id){
+                    if(getColor(data.tables[i].status) == "green"){
+                        return getColor(d.status);
+                    }else{
+                        return getColor(data.tables[i].status);
+                    }
+
+                }
+            }
+
+            switch(check){
                 case "handicap":
                     return "blue";
                 case "taken":
@@ -411,6 +456,20 @@ require("dry/header.php");
         .style("fill", "green")
         .style("stroke", "black")
         .style("stroke-width", 2);
+
+
+    //Canvas Functions
+    function getColor(check){
+        switch(check){
+            case "handicap":
+                return "blue";
+            case "taken":
+                return "brown";
+            default:
+                return "green";
+        }
+    }
+
 
     //Tool tip functions
     function displayTooltip(x, y, text){
