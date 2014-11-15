@@ -18,7 +18,7 @@
         wait in another line again.</p>
 
         <p>
-            <a class="btn btn-lg btn-success" href="#" role="button">Try it today</a>
+            <a class="btn btn-lg btn-success" href="reserve.php" role="button">Try it today</a>
         </p>
 
     </div>
@@ -36,6 +36,9 @@
             <h2>Restaurants</h2>
             <p>Upload or create a floor plan of the restaurant and use this to schedule your restaurant and ensure your restaurant
             is always at max capacity.</p>
+            <p>
+                <a class="btn btn-success" href="createRestaurant.php" role="button">Create Floor Plan</a>
+            </p>
         </div>
 
         <div class="col-lg-4 box">
