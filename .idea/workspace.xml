@@ -62,8 +62,8 @@
       <file leaf-file-name="reserve.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/reserve.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="983" max-vertical-offset="1564">
-              <caret line="79" column="12" selection-start-line="79" selection-start-column="12" selection-end-line="79" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1582" max-vertical-offset="2227">
+              <caret line="111" column="20" selection-start-line="111" selection-start-column="20" selection-end-line="111" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -72,11 +72,13 @@
       <file leaf-file-name="reserve.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/reserve.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.26779026" vertical-offset="6538" max-vertical-offset="8823">
-              <caret line="393" column="63" selection-start-line="393" selection-start-column="63" selection-end-line="393" selection-end-column="63" />
+            <state vertical-scroll-proportion="-7.393474" vertical-offset="4753" max-vertical-offset="9469">
+              <caret line="53" column="18" selection-start-line="51" selection-start-column="10" selection-end-line="53" selection-end-column="18" />
               <folding>
                 <element signature="e#6#89#0#PHP" expanded="true" />
                 <element signature="e#421#447#0#HTML" expanded="true" />
+                <element signature="e#704#730#0#HTML" expanded="true" />
+                <element signature="e#796#822#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -95,10 +97,10 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/dry/footer.php" />
         <option value="$PROJECT_DIR$/dry/header.php" />
-        <option value="$PROJECT_DIR$/js/reserve.js" />
         <option value="$PROJECT_DIR$/createRestaurant.php" />
-        <option value="$PROJECT_DIR$/css/reserve.css" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/js/reserve.js" />
+        <option value="$PROJECT_DIR$/css/reserve.css" />
         <option value="$PROJECT_DIR$/reserve.php" />
       </list>
     </option>
@@ -327,18 +329,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/reserve.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="983" max-vertical-offset="1564">
-          <caret line="79" column="12" selection-start-line="79" selection-start-column="12" selection-end-line="79" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.461538" vertical-offset="459" max-vertical-offset="1122">
           <caret line="43" column="34" selection-start-line="43" selection-start-column="34" selection-end-line="43" selection-end-column="34" />
+          <folding>
+            <element signature="e#6#89#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/createRestaurant.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.423077" vertical-offset="1615" max-vertical-offset="5916">
+          <caret line="114" column="33" selection-start-line="110" selection-start-column="8" selection-end-line="114" selection-end-column="33" />
           <folding>
             <element signature="e#6#89#0#PHP" expanded="true" />
           </folding>
@@ -353,23 +357,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/createRestaurant.php">
+    <entry file="file://$PROJECT_DIR$/css/reserve.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.423077" vertical-offset="1615" max-vertical-offset="5916">
-          <caret line="114" column="33" selection-start-line="110" selection-start-column="8" selection-end-line="114" selection-end-column="33" />
-          <folding>
-            <element signature="e#6#89#0#PHP" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="1582" max-vertical-offset="2227">
+          <caret line="111" column="20" selection-start-line="111" selection-start-column="20" selection-end-line="111" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/reserve.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26779026" vertical-offset="6538" max-vertical-offset="8823">
-          <caret line="393" column="63" selection-start-line="393" selection-start-column="63" selection-end-line="393" selection-end-column="63" />
+        <state vertical-scroll-proportion="-7.393474" vertical-offset="4753" max-vertical-offset="9469">
+          <caret line="53" column="18" selection-start-line="51" selection-start-column="10" selection-end-line="53" selection-end-column="18" />
           <folding>
             <element signature="e#6#89#0#PHP" expanded="true" />
             <element signature="e#421#447#0#HTML" expanded="true" />
+            <element signature="e#704#730#0#HTML" expanded="true" />
+            <element signature="e#796#822#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

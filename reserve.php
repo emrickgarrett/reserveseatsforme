@@ -29,7 +29,12 @@ require("dry/header.php");
 
         </div>
 
+
+
     </div>
+
+    <div class="confirmReservation" id="confirmReservation" style="visibility:hidden;"></div>
+    <div class="failedReservation" id="failedReservation" style="visibility:hidden;"></div>
 
 
 <script type="text/javascript">
@@ -281,12 +286,12 @@ require("dry/header.php");
 
               {
                   "x" : 900,
-                  "y" : 562
+                  "y" : 545
               },
 
               {
                   "x" : 40,
-                  "y" : 562
+                  "y" : 545
               }
           ]
 
@@ -421,7 +426,18 @@ require("dry/header.php");
         .attr("class", "table")
         .style("fill", "white")
         .style("stroke", "black")
-        .style("stroke-width", 3);
+        .style("stroke-width", 3)
+        .on("click", function(d, i){
+
+            if(d.status == "open"){
+
+                showReservationPrompt(d.id, i);
+
+            }else{
+                showFailurePrompt(d.id, i);
+            }
+
+        });
 
     canvas.selectAll(".wall")
         .data(data.walls)
@@ -503,6 +519,28 @@ require("dry/header.php");
         }
     });
 
+    //Reservation Prompts, works similar to tooltips
+
+    function showReservationPrompt(table_id, location){
+        $("#confirmReservation").css({visibility: "visible", opacity: "100"});
+        $("#confirmReservation").html("<h2> Would You Like To Reserve This Seat?</h2>"
+        + "<button class='btn btn-lg btn-success btnConfirm' onClick='confirmReservation(\""+ table_id + "\",\"" + location + "\");'>Confirm</button>"
+        + "<button class='btn btn-lg btn-danger btnCancel' onClick='cancelReservation()'>Cancel</button>");
+    }
+
+    function showFailurePrompt(table_id, location){
+        $("#failedReservation").css({visibility: "visible", opacity: "100"});
+        $("#failedReservation").html("<h2> This seat has already been reserved.</h2>"
+        + "<button class='btn btn-lg btn-primary' onClick='hideFailure()'>Okay</button>");
+    }
+
+    function cancelReservation(){
+        $('#confirmReservation').css({visibility: "hidden", opacity: "0"});
+    }
+
+    function hideFailure(){
+        $('#failedReservation').css({visibility: "hidden", opacity: "0"});
+    }
 
 </script>
 
