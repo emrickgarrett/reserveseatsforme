@@ -50,6 +50,8 @@
     var mouseY = 0;
     var tooltipOn = false;
 
+    var snapPixelsX = 0;
+    var snapPixelsY = 0;
 
     var svg = d3.select("#toolbox-loc").append("svg")
         .attr("width", width)
@@ -122,6 +124,48 @@
         .on("click", function(){
             toolSelected = "plant";
         });
+
+    svg.append("rect")
+        .attr("width", 80)
+        .attr("height", 40)
+        .attr("x", width/2-40)
+        .attr("y", 310)
+        .attr("fill", "white")
+        .attr("stroke", "black")
+        .attr("stroke-width", 2)
+        .on("click", function(){
+            toolSelected = "delete-first";
+        });
+    svg.append("text")
+        .attr("x", width/2-38)
+        .attr("y", 310+23)
+        .attr("fill", "black")
+        .text("Delete Tool")
+        .on("click", function(){
+            toolSelected = "delete-first";
+        });
+
+    svg.append("rect")
+        .attr("width", 80)
+        .attr("height", 40)
+        .attr("x", width/2-40)
+        .attr("y", 360)
+        .attr("fill", "white")
+        .attr("stroke", "black")
+        .attr("stroke-width", 2)
+        .on("click", function(){
+            showTooltipSnap(width/2-40, 360)
+        });
+    svg.append("text")
+        .attr("x", width/2-34)
+        .attr("y", 360+23)
+        .attr("fill", "black")
+        .text("Snap Tool")
+        .on("click", function(){
+            showTooltipSnap(width/2-40, 360)
+        });
+
+
 
 
     //Canvas Stuff goes here
@@ -238,6 +282,12 @@
                     }
 
                     break;
+                case "delete-first":
+                    alert("Click on Objects to Delete Them");
+                    toolSelected = "delete";
+                    break;
+                case "delete":
+                    break;
 
                 default:
                     console.log("Error rendering object to canvas");
@@ -310,7 +360,9 @@
                     .style("stroke", "black")
                     .style("stroke-width", 3)
                     .on("click", function () {
-
+                        if(toolSelected == "delete"){
+                            d3.select(this).remove();
+                        }
                     });
                 break;
             case "table":
@@ -324,6 +376,9 @@
                     .style("stroke", "black")
                     .style("stroke-width", 3)
                     .on("click", function(){
+                         if(toolSelected == "delete"){
+                             d3.select(this).remove();
+                         }
                     });
                 break;
             case "wall":
@@ -350,6 +405,9 @@
                     .style("stroke", "black")
                     .style("stroke-width", 3)
                     .on("click", function(){
+                        if(toolSelected == "delete"){
+                            d3.select(this).remove();
+                        }
 
                     });
                 break;
@@ -362,6 +420,9 @@
                     .style("stroke", "black")
                     .style("stroke-width", 3)
                     .on("click", function(){
+                        if(toolSelected == "delete"){
+                            d3.select(this).remove();
+                        }
                     });
 
                 canvas.append("circle")
@@ -372,6 +433,9 @@
                     .style("stroke", "black")
                     .style("stroke-width", 2)
                     .on("click", function(){
+                        if(toolSelected == "delete"){
+                            d3.select(this).remove();
+                        }
                     });
                 break;
             default:
@@ -380,11 +444,16 @@
 
     }
 
-    document.addEventListener('mousemove', function(e){
+    document.addEventListener('mousemove', function(e) {
         mouseX = e.clientX || e.pageX;
         mouseY = e.clientY || e.pageY;
 
         mouseY += $('body').scrollTop();
+
+        if (snapPixelsX > 0 && snapPixelsY > 0) {
+            mouseX = Math.floor((mouseX / snapPixelsX)) * snapPixelsX;
+             mouseY = Math.floor((mouseY / snapPixelsY)) * snapPixelsY;
+        }
     }, false);
 
 
@@ -398,6 +467,13 @@
     function showTooltipSelectWall(x, y){
         $("#tooltip-creator").css({visibility: "visible", opacity: "100", top : y + "px", left: (x-26) + "px"});
         $("#tooltip-creator").html("<h5>Rotate?</h5><button class='btn btn-primary' onclick='rotateWall()'>Yes</button><button class='btn' onclick='normalButtonWall()'>No</button>");
+        tooltipOn = true;
+    }
+
+    function showTooltipSnap(x, y){
+        $("#tooltip-creator").css({visibility: "visible", opacity: "100", top : y + "px", left: (x-26) + "px"});
+        $("#tooltip-creator").html("Snap X: <input type='text' id='snapX'  style='color:black;width:5em'><br/>"
+        + "Snap Y: <input type='text' id='snapY' width='1em' style='color:black;width:5em'><br/><button class='btn btn-primary' onclick='snapButton()'>Save</button><button class='btn' onclick='hideToolTip()'>Cancel</button>");
         tooltipOn = true;
     }
 
@@ -421,6 +497,20 @@
         toolSelected = "rotate-wall";
         hideToolTip();
     }
+
+    function snapButton(){
+
+        if(!isNaN($('#snapX').val()) && (function(x) { return (x | 0) === x; })(parseFloat($('#snapX').val()))){
+            snapPixelsX = $('#snapX').val();
+        }
+        if(!isNaN($('#snapY').val()) && (function(x) { return (x | 0) === x; })(parseFloat($('#snapY').val()))){
+            snapPixelsY = $('#snapY').val();
+        }
+
+        hideToolTip();
+
+    }
+
 
     function hideToolTip(){
         $("#tooltip-creator").css({visibility: "hidden", opacity: "0"});
