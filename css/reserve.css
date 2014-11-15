@@ -72,14 +72,23 @@ body{
 
 }
 
-.tooltip{
+.tooltip, .tooltip-creator{
     background: #084827;
     color: white;
     padding:.1em;
     border: solid whitesmoke .3em;
+}
+
+.tooltip{
     height:6em;
     width:13em;
+}
 
+.tooltip-creator{
+    height:7em;
+    width:11em;
+    position:absolute;
+    text-align:center;
 }
 
 .tooltip-text{

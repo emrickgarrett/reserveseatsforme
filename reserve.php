@@ -341,7 +341,7 @@ require("dry/header.php");
         .style("stroke", "black")
         .style("stroke-width", 3)
         .on("click", function(){
-            var text = "Tables that are located within the restaurant.";
+            var text = "Tables that are located within the restaurant. Click a table to reserve your seat.";
             displayTooltip(width/2-40, 90-20, text);
         });
 

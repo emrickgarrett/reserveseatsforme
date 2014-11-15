@@ -22,6 +22,8 @@
 
             <div class="toolbox-loc" id="toolbox-loc"></div>
 
+            <div class="tooltip-creator" id="tooltip-creator" style="visibility:hidden;"></div>
+
         </div>
 
         <div class="col-lg-10 canvas" id="canvas">
@@ -46,6 +48,7 @@
 
     var mouseX = 0;
     var mouseY = 0;
+    var tooltipOn = false;
 
 
     var svg = d3.select("#toolbox-loc").append("svg")
@@ -65,7 +68,9 @@
         .style("stroke", "black")
         .style("stroke-width", 3)
         .on("click", function(){
-            toolSelected = "chair";
+
+            showTooltipSelect(width/2-30, 40);
+            tooltipOn = true;
 
         });
 
@@ -132,16 +137,23 @@
         if(toolSelected != null) {
             switch (toolSelected) {
                 case "chair":
+                case "handi-chair":
                     cElement = canvas.append("circle")
                         .attr("r", 30)
                         .attr("cx", function(){return mouseX-xOffset;})
                         .attr("cy", function(){return mouseY-yOffset;})
                         .attr("class", "temp")
-                        .style("fill", "brown")
+                        .style("fill", function(){
+                            if(toolSelected == "chair"){
+                                return "brown";
+                            }else{
+                                return "blue";
+                            }
+                        })
                         .style("stroke", "black")
                         .style("stroke-width", 3)
                         .on("click", function(){
-                            placeTool(mouseX, mouseY, "chair");
+                            placeTool(mouseX, mouseY, toolSelected);
                         });
                     eWidth = 30;
                     eHeight = eWidth;
@@ -258,6 +270,7 @@
     function placeTool(x, y, type){
         switch(type) {
             case "chair":
+            case "handi-chair":
                 canvas.append("circle")
                     .attr("r", 30)
                     .attr("cx", function () {
@@ -267,7 +280,13 @@
                         return mouseY - yOffset;
                     })
                     .attr("class", "perm")
-                    .style("fill", "brown")
+                    .style("fill", function(){
+                        if(type=="chair"){
+                            return "brown";
+                        }else{
+                            return "blue";
+                        }
+                    })
                     .style("stroke", "black")
                     .style("stroke-width", 3)
                     .on("click", function () {
@@ -334,6 +353,29 @@
 
         mouseY += $('body').scrollTop();
     }, false);
+
+
+    function showTooltipSelect(x, y){
+        //Display Tooltip on screen here!
+        $("#tooltip-creator").css({visibility: "visible", opacity: "100", top : y + "px", left: (x-26) + "px"});
+        $("#tooltip-creator").html("<h5>Handicap Accessible?</h5><button class='btn btn-primary' onclick='handiButton()'>Yes</button><button class='btn' onclick='normalButton()'>No</button>");
+        tooltipOn = true;
+    }
+
+
+    function normalButton(){
+        toolSelected = "chair";
+        hideToolTip();
+    }
+
+    function handiButton(){
+        toolSelected = "handi-chair";
+        hideToolTip();
+    }
+
+    function hideToolTip(){
+        $("#tooltip-creator").css({visibility: "hidden", opacity: "0"});
+    }
 
 </script>
 
