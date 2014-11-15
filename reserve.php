@@ -53,7 +53,7 @@ require("dry/header.php");
               {
                   "x" : 110,
                   "y" : 40,
-                  "status" : "taken"
+                  "status" : "open"
               },
               {
                   "x" : 180,
@@ -74,8 +74,103 @@ require("dry/header.php");
                   "x" : 180,
                   "y" : 210,
                   "status" : "handicap"
-              }
+              }, //Table Group 1
 
+
+              {
+                  "x" : 360,
+                  "y" : 40,
+                  "status" : "taken"
+              },
+              {
+                  "x" : 430,
+                  "y" : 40,
+                  "status" : "taken"
+              },
+              {
+                  "x" : 500,
+                  "y" : 40,
+                  "status" : "taken"
+              },
+              {
+                  "x" : 360,
+                  "y" : 210,
+                  "status" : "taken"
+              },
+              {
+                  "x" : 430,
+                  "y" : 210,
+                  "status" : "taken"
+              },
+              {
+                  "x" : 500,
+                  "y" : 210,
+                  "status" : "taken"
+              }, //Table Group 2
+
+
+              {
+                  "x" : 680,
+                  "y" : 40,
+                  "status" : "taken"
+              },
+              {
+                  "x" : 750,
+                  "y" : 40,
+                  "status" : "taken"
+              },
+              {
+                  "x" : 820,
+                  "y" : 40,
+                  "status" : "taken"
+              },
+              {
+                  "x" : 680,
+                  "y" : 210,
+                  "status" : "taken"
+              },
+              {
+                  "x" : 750,
+                  "y" : 210,
+                  "status" : "taken"
+              },
+              {
+                  "x" : 820,
+                  "y" : 210,
+                  "status" : "taken"
+              }, //Table Group 3
+
+
+              {
+                  "x" : 660,
+                  "y" : 330,
+                  "status" : "handicap"
+              },
+              {
+                  "x" : 660,
+                  "y" : 400,
+                  "status" : "open"
+              },
+              {
+                  "x" : 660,
+                  "y" : 470,
+                  "status" : "handicap"
+              },
+              {
+                  "x" : 840,
+                  "y" : 330,
+                  "status" : "handicap"
+              },
+              {
+                  "x" : 840,
+                  "y" : 400,
+                  "status" : "open"
+              },
+              {
+                  "x" : 840,
+                  "y" : 470,
+                  "status" : "handicap"
+              }
 
           ],
 
@@ -89,15 +184,78 @@ require("dry/header.php");
                   "x" : 120,
                   "y" : 85,
                   status : "open"
+              }, //Table Group 1
+
+
+              {
+                  "x" : 340,
+                  "y" : 85,
+                  status : "open"
+              },
+              {
+                  "x" : 440,
+                  "y" : 85,
+                  status : "open"
+              }, //Table Group 2
+
+              {
+                  "x" : 660,
+                  "y" : 85,
+                  status : "open"
+              },
+              {
+                  "x" : 760,
+                  "y" : 85,
+                  status : "open"
+              },//Table Group 3
+
+              {
+                  "x" : 710,
+                  "y" : 310,
+                  status : "open"
+              },
+              {
+                  "x" : 710,
+                  "y" : 410,
+                  status : "open"
               }
+
           ],
 
           walls : [
-
+              {
+                  "x": 0,
+                  "y": 260
+              },
+              {
+                  "x": 0,
+                  "y": 440
+              },
+              {
+                  "x": 80,
+                  "y": 260
+              },
+              {
+                  "x": 80,
+                  "y": 440
+              }
           ],
 
           plants : [
+              {
+                  "x": 40,
+                  "y": 330
+              },
 
+              {
+                  "x" : 900,
+                  "y" : 562
+              },
+
+              {
+                  "x" : 40,
+                  "y" : 562
+              }
           ]
 
     };
@@ -185,7 +343,7 @@ require("dry/header.php");
         });
 
 
-    var chairs = canvas.selectAll(".chair")
+    canvas.selectAll(".chair")
         .data(data.chairs)
         .enter().append("circle")
         .attr("r", 30)
@@ -208,7 +366,7 @@ require("dry/header.php");
         .style("stroke-width", 3);
 
 
-    var tables = canvas.selectAll(".table")
+    canvas.selectAll(".table")
         .data(data.tables)
         .enter().append("rect")
         .attr("width", 80)
@@ -220,6 +378,39 @@ require("dry/header.php");
         .style("stroke", "black")
         .style("stroke-width", 3);
 
+    canvas.selectAll(".wall")
+        .data(data.walls)
+        .enter().append("rect")
+        .attr("width", 80)
+        .attr("height", 30)
+        .attr("y", function(d){return d.y;})
+        .attr("x", function(d){return d.x;})
+        .attr("class", "wall")
+        .style("fill", "gray")
+        .style("stroke", "black")
+        .style("stroke-width", 3);
+
+    canvas.selectAll(".plant")
+        .data(data.plants)
+        .enter().append("circle")
+        .attr("r", 30)
+        .attr("cx", function(d){return d.x;})
+        .attr("cy", function(d){return d.y;})
+        .attr("class", "plant")
+        .style("fill", "saddlebrown")
+        .style("stroke", "black")
+        .style("stroke-width", 3)
+
+    canvas.selectAll(".plantInner")
+        .data(data.plants)
+        .enter().append("circle")
+        .attr("r", 25)
+        .attr("cx", function(d){return d.x;})
+        .attr("cy", function(d){return d.y;})
+        .attr("class", "plantInner")
+        .style("fill", "green")
+        .style("stroke", "black")
+        .style("stroke-width", 2);
 
     //Tool tip functions
     function displayTooltip(x, y, text){
