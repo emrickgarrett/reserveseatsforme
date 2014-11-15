@@ -17,13 +17,9 @@ require("dry/header.php");
             <div class="col-lg-2 tools" id="tools">
                 <p class="tools-heading">Legend:</p>
                 <hr>
-                <p class="tools-text"><span>Red Chairs </span> represent chairs that are already taken.</p>
-                <p class="tools-text"><span>Green Chairs</span> represent chairs that are available.</p>
-                <p class="tools-text"><span>Blue Chairs</span> indicate chairs that are available and Handicap accessible.</p>
-                <p class="tools-text"><span>White Tables</span> represent tables.</span></p>
-                <p class="tools-text"><span>Brown Circles</span> with <span> Green Circles</span> represent foliage.</p>
-
                 <div class="toolbox-loc" id="toolbox-loc"></div>
+
+                <div class="tooltip" id="tooltip" style="visibility:hidden;background:grey;height:8em;width:10em;"></div>
 
             </div>
 
@@ -37,6 +33,16 @@ require("dry/header.php");
 
 
 <script type="text/javascript">
+
+    //Tooltip stuff
+    var breakLimit = "5em";
+    var toolX = 0;
+    var toolY = 0;
+    var tooltipOn = false;
+
+
+
+    //Dealing with the Legend window and canvas...
     var width = $("#tools").width(),
         height = $(window).height();
 
@@ -60,7 +66,8 @@ require("dry/header.php");
         .style("stroke", "black")
         .style("stroke-width", 3)
         .on("click", function(){
-            displayTooltip(width/2, 40);
+            var text = "Chairs. Green means available, Red means occupied, Blue means Handicap Accessible.";
+            displayTooltip(width/2-40, 40-46, text);
 
         });
 
@@ -74,7 +81,8 @@ require("dry/header.php");
         .style("stroke", "black")
         .style("stroke-width", 3)
         .on("click", function(){
-            displayTooltip(width/2-40, 90);
+            var text = "Tables that are located within the restaurant.";
+            displayTooltip(width/2-40, 90-16, text);
         });
 
     svg.append("rect")
@@ -87,7 +95,8 @@ require("dry/header.php");
         .style("stroke", "black")
         .style("stroke-width", 3)
         .on("click", function(){
-            displayTooltip(width/2-40, 190);
+            var text = "Walls that are within the restaurant, for decoration only.";
+            displayTooltip(width/2-40, 190-16, text);
         });
 
     svg.append("circle")
@@ -98,7 +107,8 @@ require("dry/header.php");
         .style("stroke", "black")
         .style("stroke-width", 3)
         .on("click", function(){
-            displayTooltip(width/2,270);
+            var text = "Foliage (plants) that are within the restaurant, for decoration only.";
+            displayTooltip(width/2-40,270-46, text);
         });
 
     svg.append("circle")
@@ -109,12 +119,15 @@ require("dry/header.php");
         .style("stroke", "black")
         .style("stroke-width", 2)
         .on("click", function(){
-            displayTooltip(width/2, 270);
+            var text = "Foliage (plants) that are within the restaurant, for decoration only.";
+            displayTooltip(width/2-40, 270-46, text);
         });
 
     function displayTooltip(x, y, text){
         //Display Tooltip on screen here!
-        //TODO
+        $("#tooltip").css({visibility: "visible", opacity: "100", top : y + "px", left: x + "px"});
+        $("#tooltip").html("<p class='tooltip-text'>" + text + "</p>");
+        tooltipOn = true;
     }
 
 
