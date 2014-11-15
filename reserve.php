@@ -262,19 +262,33 @@ require("dry/header.php");
           walls : [
               {
                   "x": 0,
-                  "y": 260
+                  "y": 260,
+                  "rotate" : "no"
               },
               {
                   "x": 0,
-                  "y": 440
+                  "y": 440,
+                  "rotate" : "no"
               },
               {
                   "x": 80,
-                  "y": 260
+                  "y": 260,
+                  "rotate" : "no"
               },
               {
                   "x": 80,
-                  "y": 440
+                  "y": 440,
+                  "rotate" : "yes"
+              },
+              {
+                  "x": 240,
+                  "y": 440,
+                  "rotate" : "yes"
+              },
+              {
+                  "x": 240,
+                  "y": 520,
+                  "rotate" : "yes"
               }
           ],
 
@@ -446,8 +460,20 @@ require("dry/header.php");
         canvas.selectAll(".wall")
             .data(data.walls)
             .enter().append("rect")
-            .attr("width", 80)
-            .attr("height", 30)
+            .attr("width", function(d){
+                if(d.rotate == "no"){
+                    return 80;
+                }else{
+                    return 30;
+                }
+            })
+            .attr("height", function(d){
+                if (d.rotate == "no"){
+                    return 30;
+                }else{
+                    return 80;
+                }
+            })
             .attr("y", function(d){return d.y;})
             .attr("x", function(d){return d.x;})
             .attr("class", "wall")
