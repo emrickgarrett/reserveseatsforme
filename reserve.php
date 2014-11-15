@@ -41,6 +41,67 @@ require("dry/header.php");
     var tooltipOn = false;
 
 
+    //JSON to use as an example of a restaurant...
+
+    var data = {
+          chairs : [
+              {
+                  "x" : 40,
+                  "y" : 40,
+                  "status" : "open"
+              },
+              {
+                  "x" : 110,
+                  "y" : 40,
+                  "status" : "taken"
+              },
+              {
+                  "x" : 180,
+                  "y" : 40,
+                  "status" : "handicap"
+              },
+              {
+                  "x" : 40,
+                  "y" : 210,
+                  "status" : "open"
+              },
+              {
+                  "x" : 110,
+                  "y" : 210,
+                  "status" : "open"
+              },
+              {
+                  "x" : 180,
+                  "y" : 210,
+                  "status" : "handicap"
+              }
+
+
+          ],
+
+          tables : [
+              {
+                  "x" : 20,
+                  "y" : 85,
+                  status : "open"
+              },
+              {
+                  "x" : 120,
+                  "y" : 85,
+                  status : "open"
+              }
+          ],
+
+          walls : [
+
+          ],
+
+          plants : [
+
+          ]
+
+    };
+
 
     //Dealing with the Legend window and canvas...
     var width = $("#tools").width(),
@@ -123,6 +184,44 @@ require("dry/header.php");
             displayTooltip(width/2-40, 270-50, text);
         });
 
+
+    var chairs = canvas.selectAll(".chair")
+        .data(data.chairs)
+        .enter().append("circle")
+        .attr("r", 30)
+        .attr("cx", function(d){return d.x;})
+        .attr("cy", function(d){return d.y;})
+        .attr("class", "chair")
+        .style("fill", function(d){
+
+            switch(d.status){
+                case "handicap":
+                    return "blue";
+                case "taken":
+                    return "brown";
+                default:
+                    return "green";
+            }
+
+        })
+        .style("stroke", "black")
+        .style("stroke-width", 3);
+
+
+    var tables = canvas.selectAll(".table")
+        .data(data.tables)
+        .enter().append("rect")
+        .attr("width", 80)
+        .attr("height", 80)
+        .attr("y", function(d){ return d.y;})
+        .attr("x", function(d){return d.x;})
+        .attr("class", "table")
+        .style("fill", "white")
+        .style("stroke", "black")
+        .style("stroke-width", 3);
+
+
+    //Tool tip functions
     function displayTooltip(x, y, text){
         //Display Tooltip on screen here!
         $("#tooltip").css({visibility: "visible", opacity: "100", top : y + "px", left: (x-13) + "px"});
