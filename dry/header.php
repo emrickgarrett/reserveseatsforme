@@ -10,6 +10,8 @@
         <link rel="stylesheet" href="css/bootstrap.css">
         <script src="js/d3.min.js"></script>
         <link rel="stylesheet" href="css/reserve.css">
+
+        <script src="js/reserve.js"></script>
     </head>
 
     <body>

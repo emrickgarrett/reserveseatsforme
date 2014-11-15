@@ -5,7 +5,7 @@
     box-shadow: none;
 }
 
-.navbar-header a:hover, .navbar-header a:visited, .navbar-header a:active, .navbar-header a:default, .navbar-header a:focus{
+.navbar-header a:hover, .navbar-header a:visited, .navbar-header a:active, .navbar-header a:default, .navbar-header a:focus {
 
     color: white;
 }
@@ -30,5 +30,43 @@ body{
     border-width:1em;
     margin-bottom:10em;
     text-align:center;
+
+}
+
+.tools{
+    background: #009448;
+    height:50em;
+}
+
+.tools hr{
+    margin:0px;
+    padding:0px;
+}
+
+.tools-heading{
+
+    color:white;
+    font-size:1.2em;
+    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align:center;
+}
+
+.tools-text{
+
+    color:white;
+    font-size:1em;
+    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align:center;
+}
+
+.canvas{
+
+    background: white;
+    height:50em;
+
+}
+
+.canvas-text{
+
 
 }
