@@ -122,6 +122,7 @@
     var cElement = null;
     var rElement = null;
     var eWidth = 0;
+    var eHeight = 0;
 
     var xOffset = $("#canvas").offset().left;
     var yOffset = $("#canvas").offset().top + $('body').scrollTop();
@@ -143,16 +144,67 @@
                             placeTool(mouseX, mouseY, "chair");
                         });
                     eWidth = 30;
+                    eHeight = eWidth;
                     break;
                 case "table":
-
-                    eWidth = 60;
+                    rElement = canvas.append("rect")
+                        .attr("width", 80)
+                        .attr("height", 80)
+                        .attr("y", function(){return mouseY - yOffset;})
+                        .attr("x", function(){ return mouseX - xOffset;})
+                        .attr("class", "temp")
+                        .style("fill", "white")
+                        .style("stroke", "black")
+                        .style("stroke-width", 3)
+                        .on("click", function(){
+                            placeTool(mouseX, mouseY, "table")
+                        });
+                    eWidth = 80;
+                    eHeight = eWidth;
                     break;
                 case "plant":
 
+                    cElement = canvas.append("circle")
+                        .attr("r", 30)
+                        .attr("cx", function(){return mouseX - xOffset;})
+                        .attr("cy", function(){return mouseY - yOffset;})
+                        .style("fill", "saddlebrown")
+                        .style("stroke", "black")
+                        .style("stroke-width", 3)
+                        .on("click", function(){
+                            placeTool(mouseX, mouseY, "plant");
+                        });
+
+                    rElement = canvas.append("circle")
+                        .attr("r", 25)
+                        .attr("cx", function(){return mouseX - xOffset;})
+                        .attr("cy", function(){return mouseY - yOffset;})
+                        .style("fill", "green")
+                        .style("stroke", "black")
+                        .style("stroke-width", 2)
+                        .on("click", function(){
+                            placeTool(mouseX, mouseY, "plant");
+                        });
+
+                    eWidth = 30;
+                    eHeight = eWidth;
+
                     break;
                 case "wall":
-
+                    rElement = canvas.append("rect")
+                        .attr("width", 80)
+                        .attr("height", 30)
+                        .attr("y", function(){return mouseY - yOffset;})
+                        .attr("x", function(){return mouseX - xOffset;})
+                        .attr("class", "wall")
+                        .style("fill", "gray")
+                        .style("stroke", "black")
+                        .style("stroke-width", 3)
+                        .on("click", function(){
+                            placeTool(mouseX, mouseY, "wall");
+                        });
+                    eWidth = 80;
+                    eHeight = 30;
                     break;
 
                 default:
@@ -167,11 +219,14 @@
         if(cElement != null){
             cElement.remove();
             cElement = null;
+
         }
         if(rElement != null){
             rElement.remove();
             rElement = null;
         }
+        eWidth = 0;
+        eHeight = 0;
     };
 
     var canvasClicked = function(){
@@ -182,10 +237,15 @@
       if(cElement != null){
           cElement.attr("cx", mouseX-xOffset);
           cElement.attr("cy", mouseY-yOffset);
-      }
-      if(rElement != null){
-          rElement.attr("x", mouseX-xOffset - eWidth/2);
-          rElement.attr("y", mouseY-yOffset - eWidth/2);
+          if(rElement != null){
+              rElement.attr("cx", mouseX-xOffset);
+              rElement.attr("cy", mouseY-yOffset);
+          }
+      }else {
+          if (rElement != null) {
+              rElement.attr("x", mouseX - xOffset - eWidth / 2);
+              rElement.attr("y", mouseY - yOffset - eHeight / 2);
+          }
       }
     };
 
@@ -198,7 +258,7 @@
     function placeTool(x, y, type){
         switch(type) {
             case "chair":
-            canvas.append("circle")
+                canvas.append("circle")
                     .attr("r", 30)
                     .attr("cx", function () {
                         return mouseX - xOffset;
@@ -215,10 +275,52 @@
                     });
                 break;
             case "table":
+                 canvas.append("rect")
+                    .attr("width", 80)
+                    .attr("height", 80)
+                    .attr("y", function(){return mouseY - yOffset -eWidth/2;})
+                    .attr("x", function(){ return mouseX - xOffset - eWidth/2;})
+                    .attr("class", "perm")
+                    .style("fill", "white")
+                    .style("stroke", "black")
+                    .style("stroke-width", 3)
+                    .on("click", function(){
+                    });
                 break;
             case "wall":
+                canvas.append("rect")
+                    .attr("width", 80)
+                    .attr("height", 30)
+                    .attr("y", function(){return mouseY - yOffset - eHeight/2;})
+                    .attr("x", function(){return mouseX - xOffset - eWidth/2;})
+                    .attr("class", "wall")
+                    .style("fill", "gray")
+                    .style("stroke", "black")
+                    .style("stroke-width", 3)
+                    .on("click", function(){
+
+                    });
                 break;
             case "plant":
+                canvas.append("circle")
+                    .attr("r", 30)
+                    .attr("cx", function(){return mouseX - xOffset;})
+                    .attr("cy", function(){return mouseY - yOffset;})
+                    .style("fill", "saddlebrown")
+                    .style("stroke", "black")
+                    .style("stroke-width", 3)
+                    .on("click", function(){
+                    });
+
+                canvas.append("circle")
+                    .attr("r", 25)
+                    .attr("cx", function(){return mouseX - xOffset;})
+                    .attr("cy", function(){return mouseY - yOffset;})
+                    .style("fill", "green")
+                    .style("stroke", "black")
+                    .style("stroke-width", 2)
+                    .on("click", function(){
+                    });
                 break;
             default:
                 break;
