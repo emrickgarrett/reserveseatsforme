@@ -9,6 +9,324 @@ function getRoomData(search){
 
     search = search.toLowerCase();
     switch(search){
+        case "808 class room":
+        case "808 classroom":
+        case "806 class room":
+        case "806 classroom":
+            return {
+              chairs: [
+                  {
+                      "table_id": 1,
+                      "x" : 560,
+                      "y" : 560,
+                      "status": "open"
+                  },
+                  {
+                      "table_id": 2,
+                      "x" : 560,
+                      "y" : 460,
+                      "status": "open"
+                  },
+                  {
+                      "table_id": 3,
+                      "x" : 560,
+                      "y" : 360,
+                      "status": "open"
+                  },
+                  {
+                      "table_id": 4,
+                      "x" : 560,
+                      "y" : 260,
+                      "status": "open"
+                  },
+                  {
+                      "table_id": 5,
+                      "x" : 560,
+                      "y" : 160,
+                      "status": "open"
+                  },
+                  {
+                      "table_id": 6,
+                      "x" : 560,
+                      "y" : 60,
+                      "status": "open"
+                  },//Back Row
+                  {
+                      "table_id": 7,
+                      "x" : 360,
+                      "y" : 560,
+                      "status": "open"
+                  },
+                  {
+                      "table_id": 8,
+                      "x" : 360,
+                      "y" : 460,
+                      "status": "open"
+                  },
+                  {
+                      "table_id": 9,
+                      "x" : 360,
+                      "y" : 360,
+                      "status": "open"
+                  },
+                  {
+                      "table_id": 10,
+                      "x" : 360,
+                      "y" : 260,
+                      "status": "open"
+                  },
+                  {
+                      "table_id": 11,
+                      "x" : 360,
+                      "y" : 160,
+                      "status": "open"
+                  },
+                  {
+                      "table_id": 12,
+                      "x" : 360,
+                      "y" : 60,
+                      "status": "open"
+                  }
+              ],
+              tables: [
+                  {
+                      "id": 1,
+                      "x": 440,
+                      "y": 520,
+                      status: "open"
+                  },
+                  {
+                      "id": 2,
+                      "x": 440,
+                      "y": 420,
+                      status: "taken"
+                  },
+                  {
+                      "id": 3,
+                      "x": 440,
+                      "y": 320,
+                      status: "open"
+                  },
+                  {
+                      "id": 4,
+                      "x": 440,
+                      "y": 220,
+                      status: "open"
+                  },
+                  {
+                      "id": 5,
+                      "x": 440,
+                      "y": 120,
+                      status: "taken"
+                  },
+                  {
+                      "id": 6,
+                      "x": 440,
+                      "y": 20,
+                      status: "taken"
+                  },//Back row
+                  {
+                      "id": 7,
+                      "x": 240,
+                      "y": 520,
+                      status: "taken"
+                  },
+                  {
+                      "id": 8,
+                      "x": 240,
+                      "y": 420,
+                      status: "open"
+                  },
+                  {
+                      "id": 9,
+                      "x": 240,
+                      "y": 320,
+                      status: "open"
+                  },
+                  {
+                      "id": 10,
+                      "x": 240,
+                      "y": 220,
+                      status: "taken"
+                  },
+                  {
+                      "id": 11,
+                      "x": 240,
+                      "y": 120,
+                      status: "taken"
+                  },
+                  {
+                      "id": 12,
+                      "x": 240,
+                      "y": 20,
+                      status: "taken"
+                  }
+              ],
+              walls: [
+                  {
+                      "x" :10,
+                      "y" :20,
+                      "rotate" : "yes"
+                  },
+                  {
+                      "x" :10,
+                      "y" :100,
+                      "rotate" : "yes"
+                  },
+                  {
+                      "x" :10,
+                      "y" :180,
+                      "rotate" : "yes"
+                  },
+                  {
+                      "x" :10,
+                      "y" :260,
+                      "rotate" : "yes"
+                  },
+                  {
+                      "x" :10,
+                      "y" :340,
+                      "rotate" : "yes"
+                  },
+                  {
+                      "x" :10,
+                      "y" :420,
+                      "rotate" : "yes"
+                  },
+                  {
+                      "x" :10,
+                      "y" :500,
+                      "rotate" : "yes"
+                  },
+                  {
+                      "x" : 10,
+                      "y" : 560,
+                      "rotate" : "yes"
+                  },//Left Wall
+                  {
+                      "x" : 10,
+                      "y" : 0,
+                      "rotate" : "no"
+                  },
+                  {
+                      "x" : 90,
+                      "y" : 0,
+                      "rotate" : "no"
+                  },
+                  {
+                      "x" : 170,
+                      "y" : 0,
+                      "rotate" : "no"
+                  },
+                  {
+                      "x" : 250,
+                      "y" : 0,
+                      "rotate" : "no"
+                  },
+                  {
+                      "x" : 330,
+                      "y" : 0,
+                      "rotate" : "no"
+                  },
+                  {
+                      "x" : 410,
+                      "y" : 0,
+                      "rotate" : "no"
+                  },
+                  {
+                      "x" : 490,
+                      "y" : 0,
+                      "rotate" : "no"
+                  },
+                  {
+                      "x" : 560,
+                      "y" : 0,
+                      "rotate" : "no"
+                  },//Top Wall
+                  {
+                      "x" : 640,
+                      "y" : 0,
+                      "rotate" : "yes"
+                  },
+                  {
+                      "x" : 640,
+                      "y" : 80,
+                      "rotate" : "yes"
+                  },
+                  {
+                      "x" : 640,
+                      "y" : 160,
+                      "rotate" : "yes"
+                  },
+                  {
+                      "x" : 640,
+                      "y" : 240,
+                      "rotate" : "yes"
+                  },
+                  {
+                      "x" : 640,
+                      "y" : 320,
+                      "rotate" : "yes"
+                  },
+                  {
+                      "x" : 640,
+                      "y" : 400,
+                      "rotate" : "yes"
+                  },
+                  {
+                      "x" : 640,
+                      "y" : 480,
+                      "rotate" : "yes"
+                  },
+                  {
+                      "x" : 640,
+                      "y" : 560,
+                      "rotate" : "yes"
+                  },//Right Wall
+                  {
+                      "x" : 590,
+                      "y" : 610,
+                      "rotate" : "no"
+                  },
+                  {
+                      "x" : 510,
+                      "y" : 610,
+                      "rotate" : "no"
+                  },
+                  {
+                      "x" : 430,
+                      "y" : 610,
+                      "rotate" : "no"
+                  },
+                  {
+                      "x" : 350,
+                      "y" : 610,
+                      "rotate" : "no"
+                  },
+                  {
+                      "x" : 270,
+                      "y" : 610,
+                      "rotate" : "no"
+                  },
+                  {
+                      "x" : 190,
+                      "y" : 610,
+                      "rotate" : "no"
+                  },
+                  {
+                      "x" : 10,
+                      "y" : 610,
+                      "rotate" : "no"
+                  }
+              ],
+              plants: [
+
+              ]
+
+            };
+
+            break;
+
         case "809 senior design":
         case "809 senior design room":
             return {
