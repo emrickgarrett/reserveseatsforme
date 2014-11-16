@@ -10,7 +10,7 @@
 
 ?>
 
-    <div class="container">
+    <div class="container" style="min-height:36em;">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <div class="jumbotron">

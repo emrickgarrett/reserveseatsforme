@@ -125,6 +125,19 @@ body{
     width:7em;
 }
 
+.confirmReservation .input-title{
+    font-weight: bold;
+    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.inputContainer .input{
+
+}
+
+.confirmReservation .input-container{
+    width:25em;
+}
+
 .failedReservation{
     color:black;
 }
@@ -135,7 +148,7 @@ body{
     width:7em;
 }
 
-.footer{
+.navbar-header{
     background: #480F08;
     color: white;
     border:none;
@@ -143,4 +156,6 @@ body{
     margin-bottom: -1em;
     font-size:1.2em;
     font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+    height:1.5em;
+    width:100%;
 }

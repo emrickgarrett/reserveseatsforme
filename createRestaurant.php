@@ -29,6 +29,7 @@
         <div class="col-lg-10 canvas" id="canvas">
             <div class="canvas-loc" id="canvas-loc"></div>
         </div>
+        <div class="confirmReservation" id="confirmReservation" style="visibility: hidden;"></div>
 
 
     </div>
@@ -52,6 +53,11 @@
 
     var snapPixelsX = 0;
     var snapPixelsY = 0;
+
+    var chairs = [];
+    var tables = [];
+    var walls = [];
+    var plants = [];
 
     var svg = d3.select("#toolbox-loc").append("svg")
         .attr("width", width)
@@ -174,15 +180,19 @@
         .attr("stroke", "black")
         .attr("stroke-width", 2)
         .on("click", function(){
-            showTooltipLink(width/2-40, 410)
+
+            saveData();
+
         });
     svg.append("text")
-        .attr("x", width/2-34)
-        .attr("y", 410+23)
+        .attr("x", width/2-18)
+        .attr("y", 410+25)
         .attr("fill", "black")
-        .text("Link Tool")
+        .text("Save")
         .on("click", function(){
-            showTooltipLink(width/2-40, 410)
+
+            saveData();
+
         });
 
 
@@ -214,6 +224,7 @@
                             }else{
                                 return "blue";
                             }
+
                         })
                         .style("stroke", "black")
                         .style("stroke-width", 3)
@@ -379,11 +390,12 @@
                     })
                     .style("stroke", "black")
                     .style("stroke-width", 3)
-                    .on("click", function () {
+                    .on("click", function (d, i) {
                         if(toolSelected == "delete"){
                             d3.select(this).remove();
                         }
                     });
+
                 break;
             case "table":
                  canvas.append("rect")
@@ -497,13 +509,6 @@
         tooltipOn = true;
     }
 
-    function showTooltipLink(x, y){
-        $("#tooltip-creator").css({visibility: "visible", opacity: "100", top : y + "px", left: (x-26) + "px"});
-        $("#tooltip-creator").html("Click table, then click chairs to link/unlink.<br/><button class='btn btn-success' onclick='linkButton()'>Finish</button>");
-        tooltipOn = true;
-    }
-
-
     function normalButtonChair(){
         toolSelected = "chair";
         hideToolTip();
@@ -537,17 +542,90 @@
 
     }
 
-    function linkButton(){
-        hideToolTip();
-    }
-
 
     function hideToolTip(){
         $("#tooltip-creator").css({visibility: "hidden", opacity: "0"});
     }
 
+
+
+//Function saves the data and then sends it to php, chance next restaurant will pop up.
+    function saveData(){
+        $("#confirmReservation").css({visibility: "visible", opacity: "100"});
+        $("#confirmReservation").html("<h2> Please Enter the Following Data.</h2>" +
+            "<div class='input-container row' style='margin-left:auto;margin-right:auto;text-align:left;'>"+
+        "<span class='input-title col-lg-6'>Restaurant Name:</span> <input id='RestName' class='input col-lg-6' type='text' placeholder='Name' width='100%'><br/><br/>" +
+        "<span class='input-title col-lg-6'>Restaurant Address:</span> <input id='RestAddress' class='input col-lg-6' type='text' placeholder='Address' width='100%'><br/><br/>" +
+        "<span class='input-title col-lg-6'>Contact Name:</span> <input id='ContactName' class='input col-lg-6' type='text' placeholder='John Doe' width='100%'><br/><br/>" +
+        "<span class='input-title col-lg-6'>Contact Email:</span> <input id='ContactEmail' class='input col-lg-6' type='text' placeholder='example@google.com' width='100%'><br/><br/>"+
+        "<span class='input-title col-lg-6'>Contact Address:</span> <input id='ContactAddress' class='input col-lg-6' type='text' placeholder='Address' width='100%'><br/><br/></div>"+
+        "<button class='btn btn-lg btn-success' onClick='saveButton()'>Create</button>");
+
+    }
+
+    function saveButton() {
+        //Saving would happen here
+        //check that all fields have valuess
+        var isValid = checkFields();
+        //store data in db
+        //store data in session
+
+        //Thank user and redirect to home.
+        if (isValid) {
+            $("#confirmReservation").html("<h2> Thanks for Adding Your Restaurant!</h2>" +
+            "<p class='lead'>Feel free to stay and edit it some more, or return to the home page!</p>" +
+            "<br/><br/><br/><br/><br/><br/><button class='btn btn-lg btn-primary' onClick='sendEmail()' style='bottom:0;'>Okay!</button>");
+        }
+    }
+
+    function sendEmail(){
+        //send email via ajax
+        //Won't work on my local machine, as it is not an SMTP server. Would work on an actual server, however.
+        $.ajax({ url: 'emailUser.php',
+            data: {email: $('#ContactEmail').val(), RestName: $('#RestName').val(), ContactName: $('#ContactName').val()},
+            type: 'post',
+            success: function(output){
+
+            }});
+
+        hideMessage();
+    }
+
+    function hideMessage(){
+        $("#confirmReservation").css({visibility: "hidden", opacity: "0"});
+    }
+
+    function checkFields(){
+        var restName = $('#RestName').val();
+        var restAdd = $('#RestAddress').val();
+        var contactName = $('#ContactName').val();
+        var contactEmail = $('#ContactEmail').val();
+        var contactAddress = $('#ContactAddress').val();
+
+        if(restName == "" || restAdd == "" || contactName == "" || contactEmail == "" || contactAddress == ""){
+            alert("Please enter information in all the fields");
+            return false;
+        }else{
+            if(contactName.indexOf(" ") == -1){
+                alert("Please enter a first and last name");
+                return false;
+            }
+            if(contactEmail.indexOf("@") == -1 || contactEmail.indexOf(".") == -1){
+                alert("Please enter a valid email");
+                return false;
+            }
+            return true;
+        }
+    }
+
+
 </script>
 
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 <?php
     require("dry/footer.php");
 
