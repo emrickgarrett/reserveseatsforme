@@ -10,7 +10,7 @@ $email = $_POST['email'];
 $restName = $_POST['RestName'];
 $contactName = $_POST['ContactName'];
 
-$message = "Thanks " . $contactName . "! We appreciate you taking the time to register your restaurant " . $restName . " and will have it in our systems shortly.\n\nHave a nice day!";
+$message = "Thanks " . $contactName . "! We appreciate you taking the time to register your business " . $restName . " and will have it in our systems shortly.\n\nHave a nice day!";
 
 $message = wordwrap($message, 70);
 
