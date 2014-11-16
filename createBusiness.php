@@ -18,7 +18,7 @@
         <div class="col-lg-2 tools" id="tools">
             <p class="tools-heading">Tools:</p>
             <hr>
-            <p class="tools-text">Drag an icon to the right to place it in your restaurant.</p>
+            <p class="tools-text">Drag an icon to the right to place it in your business.</p>
 
             <div class="toolbox-loc" id="toolbox-loc"></div>
 
@@ -554,8 +554,8 @@
         $("#confirmReservation").css({visibility: "visible", opacity: "100"});
         $("#confirmReservation").html("<h2> Please Enter the Following Data.</h2>" +
             "<div class='input-container row' style='margin-left:auto;margin-right:auto;text-align:left;'>"+
-        "<span class='input-title col-lg-6'>Restaurant Name:</span> <input id='RestName' class='input col-lg-6' type='text' placeholder='Name' width='100%'><br/><br/>" +
-        "<span class='input-title col-lg-6'>Restaurant Address:</span> <input id='RestAddress' class='input col-lg-6' type='text' placeholder='Address' width='100%'><br/><br/>" +
+        "<span class='input-title col-lg-6'>Business Name:</span> <input id='RestName' class='input col-lg-6' type='text' placeholder='Name' width='100%'><br/><br/>" +
+        "<span class='input-title col-lg-6'>Business Address:</span> <input id='RestAddress' class='input col-lg-6' type='text' placeholder='Address' width='100%'><br/><br/>" +
         "<span class='input-title col-lg-6'>Contact Name:</span> <input id='ContactName' class='input col-lg-6' type='text' placeholder='John Doe' width='100%'><br/><br/>" +
         "<span class='input-title col-lg-6'>Contact Email:</span> <input id='ContactEmail' class='input col-lg-6' type='text' placeholder='example@google.com' width='100%'><br/><br/>"+
         "<span class='input-title col-lg-6'>Contact Address:</span> <input id='ContactAddress' class='input col-lg-6' type='text' placeholder='Address' width='100%'><br/><br/></div>"+
@@ -572,7 +572,7 @@
 
         //Thank user and redirect to home.
         if (isValid) {
-            $("#confirmReservation").html("<h2> Thanks for Adding Your Restaurant!</h2>" +
+            $("#confirmReservation").html("<h2> Thanks for Adding Your Business!</h2>" +
             "<p class='lead'>Feel free to stay and edit it some more, or return to the home page!</p>" +
             "<br/><br/><br/><br/><br/><br/><button class='btn btn-lg btn-primary' onClick='sendEmail()' style='bottom:0;'>Okay!</button>");
         }

@@ -357,7 +357,7 @@ echo "<script type='text/javascript'>alert('" . $_GET['search'] . "');</script>"
         .style("stroke", "black")
         .style("stroke-width", 3)
         .on("click", function(){
-            var text = "Tables that are located within the restaurant. Click a table to reserve your seat.";
+            var text = "Tables that are located within the business. Click a table to reserve your seat.";
             displayTooltip(width/2-40, 90-20, text);
         });
 
@@ -371,7 +371,7 @@ echo "<script type='text/javascript'>alert('" . $_GET['search'] . "');</script>"
         .style("stroke", "black")
         .style("stroke-width", 3)
         .on("click", function(){
-            var text = "Walls that are within the restaurant, for decoration only.";
+            var text = "Walls that are within the business, for decoration only.";
             displayTooltip(width/2-40, 190-20, text);
         });
 
@@ -383,7 +383,7 @@ echo "<script type='text/javascript'>alert('" . $_GET['search'] . "');</script>"
         .style("stroke", "black")
         .style("stroke-width", 3)
         .on("click", function(){
-            var text = "Foliage (plants) that are within the restaurant, for decoration only.";
+            var text = "Foliage (plants) that are within the business, for decoration only.";
             displayTooltip(width/2-40,270-50, text);
         });
 
@@ -395,7 +395,7 @@ echo "<script type='text/javascript'>alert('" . $_GET['search'] . "');</script>"
         .style("stroke", "black")
         .style("stroke-width", 2)
         .on("click", function(){
-            var text = "Foliage (plants) that are within the restaurant, for decoration only.";
+            var text = "Foliage (plants) that are within the business, for decoration only.";
             displayTooltip(width/2-40, 270-50, text);
         });
 

@@ -18,7 +18,7 @@
         way never seen before.</p>
 
         <p>
-            <a class="btn btn-lg btn-success" href="restaurantSearch.php" role="button">Try it today</a>
+            <a class="btn btn-lg btn-success" href="businessSearch.php" role="button">Try it today</a>
         </p>
 
     </div>
@@ -38,7 +38,7 @@
             <p>Upload or create a floor plan of your building and use this to ensure your venue is at max capacity. Use this
             to plan seating in classrooms, libraries, restaurants, stadiums, and much, much more.</p>
             <p>
-                <a class="btn btn-success" href="createRestaurant.php" role="button">Create Floor Plan</a>
+                <a class="btn btn-success" href="createBusiness.php" role="button">Create Floor Plan</a>
             </p>
         </div>
 
@@ -46,7 +46,7 @@
             <h2>Applications</h2>
             <p>ReserveSeatsFor.Me will be available both as a Desktop and Mobile web site, as well as a planned mobile app
             in the near future. Businesses can enjoy a version of the website to help them manage their reservations.<br/>
-                <a href="#">Interested? Click Here to learn more!</a></p>
+                <a href="learnMore.php">Interested? Click Here to learn more!</a></p>
         </div>
 
     </div>

@@ -28,8 +28,8 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-26.153847" vertical-offset="0" max-vertical-offset="1139">
-              <caret line="40" column="89" selection-start-line="40" selection-start-column="89" selection-end-line="40" selection-end-column="89" />
+            <state vertical-scroll-proportion="-15.692307" vertical-offset="408" max-vertical-offset="1139">
+              <caret line="48" column="38" selection-start-line="48" selection-start-column="38" selection-end-line="48" selection-end-column="38" />
               <folding>
                 <element signature="e#6#89#0#PHP" expanded="true" />
               </folding>
@@ -37,10 +37,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="learnMore.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="learnMore.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/learnMore.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.84082395" vertical-offset="214" max-vertical-offset="867">
+            <state vertical-scroll-proportion="-17.26923" vertical-offset="214" max-vertical-offset="867">
               <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding>
                 <element signature="e#6#89#0#PHP" expanded="true" />
@@ -49,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="restaurantSearch.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/restaurantSearch.php">
+      <file leaf-file-name="businessSearch.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/businessSearch.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.4615383" vertical-offset="316" max-vertical-offset="850">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state vertical-scroll-proportion="-8.115385" vertical-offset="61" max-vertical-offset="850">
+              <caret line="16" column="58" selection-start-line="16" selection-start-column="58" selection-end-line="16" selection-end-column="58" />
               <folding>
                 <element signature="e#6#89#0#PHP" expanded="true" />
                 <element signature="e#154#178#0#HTML" expanded="true" />
@@ -75,14 +75,14 @@
       <file leaf-file-name="reserve.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reserve.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="10319">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state vertical-scroll-proportion="-137.73077" vertical-offset="3168" max-vertical-offset="10319">
+              <caret line="397" column="69" selection-start-line="397" selection-start-column="69" selection-end-line="397" selection-end-column="69" />
               <folding>
                 <element signature="e#6#89#0#PHP" expanded="true" />
                 <element signature="e#504#530#0#HTML" expanded="true" />
                 <element signature="e#787#813#0#HTML" expanded="true" />
                 <element signature="e#879#905#0#HTML" expanded="true" />
-                <marker date="1416132426046" expanded="true" signature="155:220" placeholder="..." />
+                <marker date="1416134403272" expanded="true" signature="155:220" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -98,19 +98,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="createRestaurant.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/createRestaurant.php">
+      <file leaf-file-name="createBusiness.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/createBusiness.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.576923" vertical-offset="9713" max-vertical-offset="10829">
-              <caret line="586" column="38" selection-start-line="586" selection-start-column="38" selection-end-line="586" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.26679462" vertical-offset="9330" max-vertical-offset="10829">
+              <caret line="557" column="52" selection-start-line="557" selection-start-column="52" selection-end-line="557" selection-end-column="52" />
               <folding>
                 <element signature="e#6#89#0#PHP" expanded="true" />
-                <element signature="e#510#536#0#HTML" expanded="true" />
-                <element signature="e#750#777#0#HTML" expanded="true" />
-                <marker date="1416124464527" expanded="true" signature="16519:16540" placeholder="..." />
-                <marker date="1416124464527" expanded="true" signature="16617:16638" placeholder="..." />
-                <marker date="1416124464527" expanded="true" signature="18027:18078" placeholder="..." />
-                <marker date="1416124464527" expanded="true" signature="19651:19660" placeholder="..." />
+                <element signature="e#508#534#0#HTML" expanded="true" />
+                <element signature="e#748#775#0#HTML" expanded="true" />
+                <marker date="1416134480946" expanded="true" signature="16517:16538" placeholder="..." />
+                <marker date="1416134480946" expanded="true" signature="16615:16636" placeholder="..." />
+                <marker date="1416134480946" expanded="true" signature="18025:18076" placeholder="..." />
+                <marker date="1416134480946" expanded="true" signature="19643:19652" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -134,9 +134,11 @@
         <option value="$PROJECT_DIR$/createRestaurant.php" />
         <option value="$PROJECT_DIR$/css/reserve.css" />
         <option value="$PROJECT_DIR$/restaurantSearch.php" />
-        <option value="$PROJECT_DIR$/reserve.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/learnMore.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/businessSearch.php" />
+        <option value="$PROJECT_DIR$/reserve.php" />
+        <option value="$PROJECT_DIR$/createBusiness.php" />
       </list>
     </option>
   </component>
@@ -364,22 +366,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/createRestaurant.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.576923" vertical-offset="9713" max-vertical-offset="10829">
-          <caret line="586" column="38" selection-start-line="586" selection-start-column="38" selection-end-line="586" selection-end-column="38" />
-          <folding>
-            <element signature="e#6#89#0#PHP" expanded="true" />
-            <element signature="e#510#536#0#HTML" expanded="true" />
-            <element signature="e#750#777#0#HTML" expanded="true" />
-            <marker date="1416124464527" expanded="true" signature="16519:16540" placeholder="..." />
-            <marker date="1416124464527" expanded="true" signature="16617:16638" placeholder="..." />
-            <marker date="1416124464527" expanded="true" signature="18027:18078" placeholder="..." />
-            <marker date="1416124464527" expanded="true" signature="19651:19660" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/reserve.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1105" max-vertical-offset="2890">
@@ -388,24 +374,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reserve.php">
+    <entry file="file://$PROJECT_DIR$/learnMore.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="10319">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        <state vertical-scroll-proportion="-17.26923" vertical-offset="214" max-vertical-offset="867">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
             <element signature="e#6#89#0#PHP" expanded="true" />
-            <element signature="e#504#530#0#HTML" expanded="true" />
-            <element signature="e#787#813#0#HTML" expanded="true" />
-            <element signature="e#879#905#0#HTML" expanded="true" />
-            <marker date="1416132426046" expanded="true" signature="155:220" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/restaurantSearch.php">
+    <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.4615383" vertical-offset="316" max-vertical-offset="850">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        <state vertical-scroll-proportion="-15.692307" vertical-offset="408" max-vertical-offset="1139">
+          <caret line="48" column="38" selection-start-line="48" selection-start-column="38" selection-end-line="48" selection-end-column="38" />
+          <folding>
+            <element signature="e#6#89#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/businessSearch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.115385" vertical-offset="61" max-vertical-offset="850">
+          <caret line="16" column="58" selection-start-line="16" selection-start-column="58" selection-end-line="16" selection-end-column="58" />
           <folding>
             <element signature="e#6#89#0#PHP" expanded="true" />
             <element signature="e#154#178#0#HTML" expanded="true" />
@@ -413,22 +405,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/reserve.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-26.153847" vertical-offset="0" max-vertical-offset="1139">
-          <caret line="40" column="89" selection-start-line="40" selection-start-column="89" selection-end-line="40" selection-end-column="89" />
+        <state vertical-scroll-proportion="-137.73077" vertical-offset="3168" max-vertical-offset="10319">
+          <caret line="397" column="69" selection-start-line="397" selection-start-column="69" selection-end-line="397" selection-end-column="69" />
           <folding>
             <element signature="e#6#89#0#PHP" expanded="true" />
+            <element signature="e#504#530#0#HTML" expanded="true" />
+            <element signature="e#787#813#0#HTML" expanded="true" />
+            <element signature="e#879#905#0#HTML" expanded="true" />
+            <marker date="1416134403272" expanded="true" signature="155:220" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/learnMore.php">
+    <entry file="file://$PROJECT_DIR$/createBusiness.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.84082395" vertical-offset="214" max-vertical-offset="867">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.26679462" vertical-offset="9330" max-vertical-offset="10829">
+          <caret line="557" column="52" selection-start-line="557" selection-start-column="52" selection-end-line="557" selection-end-column="52" />
           <folding>
             <element signature="e#6#89#0#PHP" expanded="true" />
+            <element signature="e#508#534#0#HTML" expanded="true" />
+            <element signature="e#748#775#0#HTML" expanded="true" />
+            <marker date="1416134480946" expanded="true" signature="16517:16538" placeholder="..." />
+            <marker date="1416134480946" expanded="true" signature="16615:16636" placeholder="..." />
+            <marker date="1416134480946" expanded="true" signature="18025:18076" placeholder="..." />
+            <marker date="1416134480946" expanded="true" signature="19643:19652" placeholder="..." />
           </folding>
         </state>
       </provider>

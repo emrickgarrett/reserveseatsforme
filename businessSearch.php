@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <div class="jumbotron">
-                    <h2>Search For Your Favorite Restaurants...</h2>
+                    <h2>Search For Your Favorite Locations...</h2>
 
                     <p class="lead">If we have a floor plan, we'll take you to it!</p>
 
