@@ -9,6 +9,170 @@ function getRoomData(search){
 
     search = search.toLowerCase();
     switch(search){
+        case "809 senior design":
+        case "809 senior design room":
+            return {
+              chairs: [
+                  {
+                      "table_id" : 1,
+                      "x" : 180,
+                      "y" : 220,
+                      "status" : open
+                  },
+                  {
+                      "table_id" : 2,
+                      "x" : 180,
+                      "y" : 320,
+                      "status" : open
+                  },
+                  {
+                      "table_id" : 3,
+                      "x" : 340,
+                      "y" : 220,
+                      "status" : open
+                  },
+                  {
+                      "table_id" : 4,
+                      "x" : 340,
+                      "y" : 320,
+                      "status" : open
+                  }
+              ],
+              tables: [
+                  {
+                      "id": 2,
+                      "x": 220,
+                      "y": 280,
+                      status: "open"
+                  },
+                  {
+                      "id": 1,
+                      "x": 220,
+                      "y": 180,
+                      status: "taken"
+                  },
+                  {
+                      "id": 4,
+                      "x": 380,
+                      "y": 280,
+                      status: "open"
+                  },
+                  {
+                      "id": 3,
+                      "x": 380,
+                      "y": 180,
+                      status: "open"
+                  }
+              ],
+              walls: [
+                  {
+                      "x" :100,
+                      "y" :80,
+                      "rotate" : "yes"
+                  },
+                  {
+                      "x" :100,
+                      "y" :160,
+                      "rotate" : "yes"
+                  },
+                  {
+                      "x" :100,
+                      "y" :240,
+                      "rotate" : "yes"
+                  },
+                  {
+                      "x" :100,
+                      "y" :320,
+                      "rotate" : "yes"
+                  },//Left Wall
+                  {
+                      "x" :100,
+                      "y" :370,
+                      "rotate" : "no"
+                  },
+                  {
+                      "x" :180,
+                      "y" :370,
+                      "rotate" : "no"
+                  },
+                  {
+                      "x" :260,
+                      "y" :370,
+                      "rotate" : "no"
+                  },
+                  {
+                      "x" :340,
+                      "y" :370,
+                      "rotate" : "no"
+                  },
+                  {
+                      "x" :420,
+                      "y" :370,
+                      "rotate" : "no"
+                  },
+                  {
+                      "x" :500,
+                      "y" :370,
+                      "rotate" : "no"
+                  },
+                  {
+                      "x" :580,
+                      "y" :370,
+                      "rotate" : "no"
+                  },//Bottom Wall
+                  {
+                      "x" :630,
+                      "y" :320,
+                      "rotate" : "yes"
+                  },
+                  {
+                      "x" :630,
+                      "y" :240,
+                      "rotate" : "yes"
+                  },
+                  {
+                      "x" :630,
+                      "y" :160,
+                      "rotate" : "yes"
+                  },
+                  {
+                      "x" :630,
+                      "y" :80,
+                      "rotate" : "yes"
+                  },//Right Wall
+                  {
+                      "x" :580,
+                      "y" :80,
+                      "rotate" : "no"
+                  },
+                  {
+                      "x" :420,
+                      "y" :80,
+                      "rotate" : "no"
+                  },
+                  {
+                      "x" :340,
+                      "y" :80,
+                      "rotate" : "no"
+                  },
+                  {
+                      "x" :260,
+                      "y" :80,
+                      "rotate" : "no"
+                  },
+                  {
+                      "x" :100,
+                      "y" :80,
+                      "rotate" : "no"
+                  }
+
+              ],
+              plants:[
+
+              ]
+            };
+            break;
+
         case "801d project room":
         case "801e project room":
             return {
