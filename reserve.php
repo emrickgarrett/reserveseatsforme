@@ -8,6 +8,8 @@
 
 require("dry/header.php");
 
+echo "<script type='text/javascript'>alert('" . $_GET['search'] . "');</script>";
+
 ?>
 
     <div class="container">

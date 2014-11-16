@@ -19,7 +19,7 @@
                     <p class="lead">If we have a floor plan, we'll take you to it!</p>
 
                     <div class="input-group">
-                        <input type="text" class="form-control" autofocus="true">
+                        <input type="text" class="form-control" id="search" autofocus="true">
                       <span class="input-group-btn">
                         <button class="btn btn-default" type="button" onclick="navigate();">Search!</button>
                       </span>
@@ -33,7 +33,8 @@
 <script type="text/javascript">
 
    function navigate() {
-       window.location.href = "reserve.php";
+
+       window.location.href = "reserve.php?search=" + $('#search').val();
    }
 </script>
 
