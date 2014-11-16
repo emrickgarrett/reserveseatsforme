@@ -1,5 +1,5 @@
 .navbar-default, .navbar, .navbar-header, .navbar .container-fluid, .navbar-default div.navbar-collapse{
-    background: #480F08;
+    background: #5754c8;
     color: black;
     border:none;
     box-shadow: none;
@@ -12,22 +12,26 @@
 
 body{
 
-    background: #D42B18;
+    background: #e9eaed;
     padding:0px;
 
 }
 
 .jumbotron h1, .jumbotron p{
-    text-align:center
+    text-align:center;
 
+}
+
+.jumbotron{
+    background:lightgray;
 }
 
 .box{
 
-    background: white;
+    background: lightgray;
     height:15em;
-    border-right: solid #D42B18;
-    border-left: solid #D42B18;
+    border-right: solid #e9eaed;
+    border-left: solid #e9eaed;
     border-width:1em;
     margin-bottom:10em;
     text-align:center;
@@ -35,7 +39,7 @@ body{
 }
 
 .tools{
-    background: #009448;
+    background: #5754c8;
     height:50em;
 }
 
@@ -74,7 +78,7 @@ body{
 }
 
 .tooltip, .tooltip-creator{
-    background: #084827;
+    background: dodgerblue;
     color: white;
     padding:.1em;
     border: solid whitesmoke .3em;
@@ -149,7 +153,7 @@ body{
 }
 
 .navbar-header{
-    background: #480F08;
+    background: #5754c8;
     color: white;
     border:none;
     box-shadow: none;
